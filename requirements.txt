@@ -1,0 +1,10 @@
+streamlit
+torch
+transformers
+peft
+accelerate
+bitsandbytes
+scikit-learn   # must match the version used in the Colab notebook (pip show scikit-learn)
+joblib
+numpy
+pandas
