@@ -146,22 +146,7 @@ Run `notebooks/dual_process_aes.ipynb` in Google Colab with a T4 GPU. It takes a
 4. For traits with confidence below 0.2, the slow module writes new scores.
 5. The page shows the overall score and a table: score, confidence, and which module (fast or slow) gave it.
 
-## 6. Pushing changes to GitHub (for team members)
 
-The `.gitignore` file in the main folder tells git to skip files that should not be on GitHub, like the local
-Python environment (`.venv/`), Python cache files, and the `log.txt` and `cloudflared` files made when running
-the app. So you can push your changes normally:
-
-```bash
-git status                     # check the list: .venv/ must NOT appear
-git add -A
-git commit -m "Describe what you changed"
-git push
-```
-
-- **Always run `git status` before `git add`.** If you see a folder that should not be pushed (for example a
-  new virtual environment with a different name), add its name to `.gitignore` first.
-- If `.venv` was already added by mistake, remove it from git (your local copy stays) with
   `git rm -r --cached .venv`, then commit.
 - Large model files (`*.safetensors`, `*.npz`) are sent with Git LFS automatically. Install
   [Git LFS](https://git-lfs.com) before you clone or push. GitHub does not accept files over 100 MB without it.
